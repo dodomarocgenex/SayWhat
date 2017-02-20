@@ -84,6 +84,7 @@ class SpeechRecognitionViewController: UIViewController, SFSpeechRecognizerDeleg
     func stopListening() {
         audioEngine.stop()
         audioEngine.inputNode?.removeTap(onBus: 0)
+        recognitionRequest?.endAudio()
         recognitionRequest = nil
         recognitionTask = nil
     }
